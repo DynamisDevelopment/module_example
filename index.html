@@ -7,12 +7,25 @@
   </head>
   <body>
     <button id="kover_open">Open</button>
-    <script src="http://3.136.11.15/kover_gridwise_app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kover_gridwise_module@3.0.5/build/kover.min.js"></script>
     <script>
-      // console.log(Kover)
-      // const kover = new Kover.default.Create()
-      // // kover.close()
-      // // kover.open()
+      const kover = new Kover.Create({
+        default_email: "testemail@gmail.com",
+        default_income: 3400,
+        pluginKey: "valid",
+        lifecycle_url: "34234.kover.ai",
+        SKU: "42342",
+        onSuccess: () => {
+          setTimeout(() => {
+            console.log("pressed!")
+          }, 3000)
+        },
+        onOpen: () => {
+          console.log("Opened")
+        },
+      })
+
+      kover.open()
     </script>
   </body>
 </html>
