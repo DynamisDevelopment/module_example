@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kover Example</title>
+  </head>
+  <body>
+    <button id="kover_open">Open</button>
+    <script src="http://3.136.11.15/kover_gridwise_app.js"></script>
+    <script>console.log(Kover);
+var kover = new Kover.default.Create({
+  default_email: "testemail@gmail.com",
+  default_income: 3400,
+  pluginKey: "valid",
+  lifecycle_url: "34234.kover.ai",
+  SKU: "43242",
+  onSuccess: function onSuccess() {
+    setTimeout(function () {
+      console.log("pressed!");
+    }, 3000);
+  },
+  onOpen: function onOpen() {
+    console.log("Opened");
+  }
+}); // kover.close()
+
+kover.open();</script>
+  </body>
+</html>
