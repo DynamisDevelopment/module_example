@@ -3,28 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kover Example</title>
+    <title>Document</title>
   </head>
   <body>
-    <button id="kover_open">Open</button>
-    <script src="https://cdn.jsdelivr.net/npm/kover_gridwise_module@3.0.5/build/kover.min.js"></script>
-    <script>
+    <script src="http://3.136.11.15/api/product/incomeshield/v1/js"></script>
+    <script type="text/javascript">
       const kover = new Kover.Create({
-        default_email: "testemail@gmail.com",
-        default_income: 3400,
         pluginKey: "valid",
-        lifecycle_url: "34234.kover.ai",
-        SKU: "42342",
-        onSuccess: () => {
-          setTimeout(() => {
-            console.log("pressed!")
-          }, 3000)
+        env: "test",
+        data: {
+          lifecycle_url: "api.example.com/receive",
+          default_income: 1000,
+          income_verified: true,
+          default_email: "example@gmail.com",
+          uuid: "0x123456",
+          SKU: "43242",
         },
-        onOpen: () => {
-          console.log("Opened")
-        },
+        onInit: () => console.log("Initialized"),
+        onClose: () => console.log("Closed"),
+        onOpen: () => console.log("Opened"),
+        onComplete: (status) => console.log(`Status: ${status}`),
       })
-
       kover.open()
     </script>
   </body>
